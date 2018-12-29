@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Andrew Gorman - About</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+  </head>
+  <style media="screen">
+
+    body{
+      margin-right: 0em;
+      width: 100%;
+    }
+    .navbar {
+      height: 5em;
+      width: 100%;
+      background-color: #333333;
+      border-bottom: 4px solid #B4B4B4;
+      position: fixed;
+    }
+    .navlink {
+      color: white;
+      float: right;
+      font-size: 1.5em;
+      text-align: center;
+      padding: .8em 1em 1em;
+      text-decoration: none;
+      display: inline;
+    }
+    .navlink:hover {
+      color: #7a7a7a;
+    }
+    .namehero {
+      color: white;
+      font-size: 2em;
+      padding: .4em 1em 1em;
+      text-decoration: none;
+      display:inline-block;
+    }
+    .namehero:hover {
+      color: #7a7a7a;
+    }
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+    html {
+      background: url(/img/background_about.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    @media (max-width: 1190px) {
+      .navlink {
+        font-size: 1.2em;
+        padding: 1.3em 1em 1em;
+      }
+    }
+    @media (max-width: 1020px) {
+      .navlink {
+        font-size: 1em;
+        padding: 1.8em 1em 1em;
+      }
+    }
+    @media (max-width: 890px) {
+      .navlink {
+        font-size: .8em;
+        padding: 2.5em 1em 1em;
+      }
+    }
+    @media (max-width: 770px) {
+      .navlink {
+        font-size: .7em;
+        padding: 2.6em 1em 1em;
+      }
+      .namehero {
+        font-size: 1.5em;
+        padding: .8em 1em 1em;
+      }
+    }
+    @media (max-width: 680px) {
+      .mobile {
+        display:block;
+      }
+      .desktop {
+        display: none;
+      }
+      .navbar {
+        height: 7em;
+        width: 100%;
+        background-color: #333333;
+        border-bottom: 4px solid #B4B4B4;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+      .navlink {
+        color: white;
+        font-size: .8em;
+        text-align: center;
+        margin-top: -2.5em;
+        text-decoration: none;
+        display: inline;
+      }
+      .namehero {
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-decoration: none;
+        display:inline-block;
+      }
+      .mobiledivider {
+        position: relative;
+        top: -65px; left: 65px;
+        color: #B4B4B4;
+        width: 100%;
+      }
+      .pagecontent{
+        border-radius: 5px;
+        background: #707070;
+        height: 50%;
+      }
+      .menuCenter {
+        position: relative;
+        float: none;
+        right: auto;
+        left: auto;
+      }
+    }
+  </style>
+  <body class="container">
+    <div class="container">
+      <div class="navbar desktop twelve columns">
+        <a class="namehero five columns" style="" href="www.andrewgorman.co">Andrew Gorman</a>
+        <a class="navlink one column"  href="#Contact">Contact</a>
+        <a class="navlink one column"  href="#about">LinkedIn</a>
+        <a class="navlink one column"  href="#about">GitHub</a>
+        <a class="navlink one column"  href="portfolio.andrewgorman.co">Portfolio</a>
+        <a class="navlink one column"  href="#about">LinkedIn</a>
+        <a class="navlink one column"  href="#resume">Résumé</a>
+        <a class="navlink one column" href="#about">About</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="navbar mobile twelve columns">
+        <a class="namehero" href="www.andrewgorman.co">Andrew Gorman</a>
+        <div class="menuCenter">
+          <a class="navlink" href="#Contact">Contact</a>
+          <a class="navlink" href="#about">LinkedIn</a>
+          <a class="navlink" href="#about">GitHub</a>
+          <a class="navlink" href="portfolio.andrewgorman.co">Portfolio</a>
+          <a class="navlink" href="#about">LinkedIn</a>
+          <a class="navlink" href="#resume">Résumé</a>
+          <a class="navlink" href="#about">About</a>
+        </div>
+      </div>
+    </div>
+    <div class="pagecontent five columns offset-by-six">
+      <p>test</p>
+    </div>
+  </body>
+</html>

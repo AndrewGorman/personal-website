@@ -1,0 +1,214 @@
+html {
+  background-color: #333333;
+}
+
+body.container {
+  margin: 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.mainpage {
+  background: url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  height: 7rem;
+  width: 100%;
+  background-color: #333333;
+  border-bottom: 4px solid #B4B4B4;
+  /* position: fixed; */
+}
+
+.navlink {
+  color: white;
+  float: right;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.8rem 1rem 1rem;
+  text-decoration: none;
+  display: inline;
+}
+
+.navlink:hover {
+  color: #7a7a7a;
+}
+
+.namehero {
+  color: white;
+  font-size: 3rem;
+  padding: 1rem 1rem 1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.namehero:hover {
+  color: #7a7a7a;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.pagecontent {
+  border-radius: 5px;
+  min-width: 290px !important;
+  width: 30%;
+  opacity: .8;
+  float: right;
+  margin: 5rem 5rem 5rem 30rem;
+  background: #454343;
+  height: 50%;
+  color: white;
+}
+
+.textbody {
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+.resumeBody {
+  color: white;
+  margin: 3em 5em 5em 20em;
+  min-width: 300px;
+}
+
+.resumePage {
+  display: inline;
+}
+
+/* Link Pop */
+.link-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+/* Pulse Link Pop */
+@-webkit-keyframes pulse-link-pop {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes pulse-link-pop {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.pulse-link-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.pulse-link-pop:hover, .pulse-link-pop:focus, .pulse-link-pop:active {
+  -webkit-animation-name: pulse-link-pop;
+  animation-name: pulse-link-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.link-pop:hover, .link-pop:focus, .link-pop:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+@media (max-width: 900px) {
+  .navlink {
+    font-size: 1.8rem;
+    padding: 2.1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .mainpage {
+    width: 100%;
+    margin: 0rem 0rem 0rem 0rem;
+    background: url(/img/MobileBackground1.jpg);
+    background-color: #333333;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .navbar {
+    height: 8rem;
+    width: 100% margin: 0 0 0 0;
+    background-color: #333333;
+    border-bottom: 4px solid #B4B4B4;
+  }
+  .navlink {
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: inline;
+  }
+  .namehero {
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .mobiledivider {
+    position: relative;
+    top: -65px;
+    left: 65px;
+    color: #B4B4B4;
+    width: 100%;
+  }
+  .pagecontent {
+    border-radius: 5px;
+    min-width: 300px !important;
+    width: 80%;
+    opacity: .8;
+    margin: 5rem 5rem 5rem 5rem;
+    background: #454343;
+    height: 50%;
+    color: white;
+  }
+  .menuCenter {
+    position: relative;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3rem;
+  }
+  .textbody {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+  .resumeBody {
+    color: white;
+    margin: 3em 5em 5em 5em;
+    min-width: 300px;
+  }
+}
