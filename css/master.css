@@ -1,16 +1,32 @@
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100%;
+  position: fixed;
+}
 html {
+  margin: 0;
+  padding: 0;
   background-color: #333333;
+  width: 100%;
+  height: 100%;
+  background: url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 body.container {
-  margin: 0rem;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
 }
 
-.mainpage {
-  background: url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
-  background-size: cover;
+a {
+  color: #1EAEDB;
+}
+
+a:hover {
+  color: #0FA0CE;
 }
 
 .navbar {
@@ -57,11 +73,11 @@ body.container {
 
 .pagecontent {
   border-radius: 5px;
-  min-width: 290px !important;
+  min-width: 500px !important;
   width: 30%;
   opacity: .8;
   float: right;
-  margin: 5rem 5rem 5rem 20rem;
+  margin: 5rem 5rem 5rem 5rem;
   background: #454343;
   height: 50%;
   color: white;
@@ -85,7 +101,7 @@ body.container {
 .link-pop {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
+  -webkit-transform: perspective(2px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-transition-duration: 0.3s;
@@ -119,8 +135,8 @@ body.container {
 .pulse-link-pop:hover, .pulse-link-pop:focus, .pulse-link-pop:active {
   -webkit-animation-name: pulse-link-pop;
   animation-name: pulse-link-pop;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -144,21 +160,24 @@ body.container {
   height:200px;
   width:200px;
 }
+
 @media (max-width: 900px) {
   .navlink {
     font-size: 1.8rem;
     padding: 2.1rem 1rem 1rem;
   }
+  .logoFun {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
-  .mainpage {
-    width: 100%;
-    margin: 0rem 0rem 0rem 0rem;
+  html {
     background: url(/img/MobileBackground1.jpg);
     background-color: #333333;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
   .mobile {
     display: block;
@@ -168,13 +187,15 @@ body.container {
   }
   .navbar {
     height: 8rem;
-    width: 100% margin: 0 0 0 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: #333333;
     border-bottom: 4px solid #B4B4B4;
   }
   .navlink {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-decoration: none;
     display: inline;
   }
@@ -201,7 +222,7 @@ body.container {
     min-width: 300px !important;
     width: 80%;
     opacity: .8;
-    margin: 5rem 5rem 5rem 5rem;
+    margin: 40rem 5rem 5rem 5rem;
     background: #454343;
     height: 50%;
     color: white;
@@ -220,5 +241,11 @@ body.container {
     color: white;
     margin: 3em 5em 5em 5em;
     min-width: 300px;
+  }
+
+  @media (max-width: 440px) {
+    .navbar {
+      height: 15rem;
+    }
   }
 }
