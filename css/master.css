@@ -1,20 +1,19 @@
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
+html{
   max-width: 100%;
-  position: fixed;
-}
-html {
   margin: 0;
   padding: 0;
   background-color: #333333;
   width: 100%;
   height: 100%;
+  background-color: #333333;
+}
+.mainPage {
+
   background: url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
-body.container {
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -27,6 +26,10 @@ a {
 
 a:hover {
   color: #0FA0CE;
+}
+
+p{
+  font-size: 2rem;
 }
 
 .navbar {
@@ -73,13 +76,12 @@ a:hover {
 
 .pagecontent {
   border-radius: 5px;
-  min-width: 500px !important;
+  min-width: 500px;
   width: 30%;
   opacity: .8;
   float: right;
   margin: 5rem 5rem 5rem 5rem;
   background: #454343;
-  height: 50%;
   color: white;
 }
 
@@ -162,6 +164,9 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  html {
+    position: fixed;
+  }
   .navlink {
     font-size: 1.8rem;
     padding: 2.1rem 1rem 1rem;
@@ -172,12 +177,18 @@ a:hover {
 }
 
 @media (max-width: 800px) {
-  html {
+  .mainPage {
     background: url(/img/MobileBackground1.jpg);
     background-color: #333333;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+  h2{
+    font-size: 3rem;
+  }
+  p{
+    font-size: 1.8rem;
   }
   .mobile {
     display: block;
@@ -219,12 +230,11 @@ a:hover {
   }
   .pagecontent {
     border-radius: 5px;
-    min-width: 300px !important;
+    min-width: 300px;
     width: 80%;
     opacity: .8;
-    margin: 40rem 5rem 5rem 5rem;
+    margin: 50rem 5rem 5rem 5rem;
     background: #454343;
-    height: 50%;
     color: white;
   }
   .menuCenter {
@@ -246,6 +256,36 @@ a:hover {
   @media (max-width: 440px) {
     .navbar {
       height: 15rem;
+    }
+    .pagecontent {
+      margin: 5rem 5rem 5rem 5rem;
+    }
+  }
+
+  @media (max-width: 240px) {
+    .navbar {
+      height: 25rem;
+    }
+    .namehero {
+      padding-bottom: 2rem;
+    }
+    .mainPage{
+      background-image: none;
+      width: 100%;
+    }
+    .pagecontent {
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      overflow:auto;
+      word-wrap: break-word;
+      max-width: 100% !important;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2rem;
     }
   }
 }

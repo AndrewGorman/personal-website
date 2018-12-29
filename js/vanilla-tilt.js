@@ -132,7 +132,7 @@ class VanillaTilt {
 
     const totalAngleX = this.settings.gyroscopeMaxAngleX - this.settings.gyroscopeMinAngleX;
     const totalAngleY = this.settings.gyroscopeMaxAngleY - this.settings.gyroscopeMinAngleY;
-    
+
     const degreesPerPixelX = totalAngleX / this.width;
     const degreesPerPixelY = totalAngleY / this.height;
 
