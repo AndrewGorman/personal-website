@@ -165,7 +165,7 @@ p{
 
 @media (max-width: 900px) {
   html {
-    position: fixed;
+    position:relative;
   }
   .navlink {
     font-size: 1.8rem;
