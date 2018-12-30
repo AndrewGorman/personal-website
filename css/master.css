@@ -165,7 +165,7 @@ p{
 
 @media (max-width: 900px) {
   html {
-    position:relative;
+    position: relative;
   }
   .navlink {
     font-size: 1.8rem;
@@ -185,10 +185,10 @@ p{
     background-position: center;
   }
   h2{
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
   p{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   .mobile {
     display: block;
@@ -197,7 +197,7 @@ p{
     display: none;
   }
   .navbar {
-    height: 8rem;
+    height: 100px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -209,7 +209,9 @@ p{
     font-size: 1.5rem;
     text-decoration: none;
     display: inline;
+    padding-top: 3rem;
   }
+
   .namehero {
     color: white;
     width: 100%;
@@ -233,7 +235,7 @@ p{
     min-width: 300px;
     width: 80%;
     opacity: .8;
-    margin: 50rem 5rem 5rem 5rem;
+    margin: 20rem 5rem 5rem 5rem;
     background: #454343;
     color: white;
   }
@@ -255,8 +257,9 @@ p{
 
   @media (max-width: 440px) {
     .navbar {
-      height: 15rem;
+      height: 100px;
     }
+
     .pagecontent {
       margin: 5rem 5rem 5rem 5rem;
     }
@@ -264,7 +267,7 @@ p{
 
   @media (max-width: 240px) {
     .navbar {
-      height: 25rem;
+      height: 100px;
     }
     .namehero {
       padding-bottom: 2rem;
