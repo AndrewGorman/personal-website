@@ -5,11 +5,11 @@ html{
   background-color: #333333;
   width: 100%;
   height: 100%;
-  background-color: #333333;
 }
+
 .mainPage {
 
-  background: url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
+  background: #333333 url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -96,6 +96,7 @@ p{
 }
 
 .resumePage {
+  background: #333333 url(/img/resumeBackgroundPattern.png) repeat center center;
   display: inline;
 }
 
