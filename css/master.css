@@ -5,6 +5,7 @@ html{
   background-color: #333333;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -12,10 +13,9 @@ html{
 }
 
 .row{
-  margin-right: 5rem;
+  padding-right: 5rem;
 }
 .mainPage {
-
   background: #333333 url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
   background-size: cover;
 }
@@ -25,6 +25,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -117,7 +118,7 @@ p{
 }
 
 .firstBubble{
-  
+
 }
 
 .resumeHeader{
@@ -268,12 +269,16 @@ li{
     background: #454343;
     color: white;
   }
+
   .menuCenter {
-    position: relative;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+    text-align: center;
     margin-top: -3rem;
+  }
+
+  .navbar.mobile {
+    display: inline-block;
+    text-align: center;
   }
   .textbody {
     padding: 0rem 1rem 0rem 1rem;
@@ -303,6 +308,9 @@ li{
     }
     .mainPage{
       background-image: none;
+      width: 100%;
+    }
+    .resumePage{
       width: 100%;
     }
     .pagecontent {
