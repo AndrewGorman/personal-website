@@ -7,6 +7,13 @@ html{
   height: 100%;
 }
 
+.container {
+  margin: 0 5rem 5rem 5rem;
+}
+
+.row{
+  margin-right: 5rem;
+}
 .mainPage {
 
   background: #333333 url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
@@ -91,13 +98,34 @@ p{
 
 .resumeBody {
   color: white;
-  margin: 3em 5em 5em 20em;
+  /* margin: 3em 5em 5em 20em; */
   min-width: 300px;
 }
 
 .resumePage {
   background: #333333 url(/img/resumeBackgroundPattern.png) repeat center center;
   display: inline;
+}
+
+.resumeBubble {
+  border-radius: 5px;
+  padding: 2rem;
+  opacity: .8;
+  margin-top: 5rem;
+  background: #454343;
+  color: white;
+}
+
+.firstBubble{
+  
+}
+
+.resumeHeader{
+  text-align: center;
+}
+
+li{
+  font-size: 1.8rem;
 }
 
 /* Link Pop */
@@ -153,15 +181,15 @@ p{
   transform: translateY(-8px);
 }
 
-.logoFun {
-  float: left;
-  text-align:center;
-  margin: 5rem auto auto 5rem;
-}
-
 .actualLogo {
+  padding-left: 2rem;
   height:200px;
   width:200px;
+}
+
+.upstreamLogo {
+  padding-left: 2rem;
+  width: 400px;
 }
 
 @media (max-width: 900px) {
@@ -252,7 +280,7 @@ p{
   }
   .resumeBody {
     color: white;
-    margin: 3em 5em 5em 5em;
+    /* margin: 3em 5em 5em 5em; */
     min-width: 300px;
   }
 

@@ -8,18 +8,19 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/master.css">
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
 </head>
 
 <body>
   <div class="navbar desktop">
-    <a class="namehero" style="" href="http://www.andrewgorman.co">Andrew Gorman</a>
-    <a class="navlink" href="https://www.linkedin.com/in/andrew-gorman/" target="_blank">LinkedIn</a>
-    <a class="navlink" href="https://github.com/AndrewGorman" target="_blank">GitHub</a>
-    <a class="navlink" href="https://gitlab.com/AndrewGorman" target="_blank">GitLab</a>
-    <a class="navlink" href="http://portfolio.andrewgorman.co">Portfolio</a>
-    <a class="navlink" href="/resume.html">Hire Me</a>
-    <a class="navlink" href="/">About</a>
+    <a class="namehero" href="http://www.andrewgorman.co">Andrew Gorman</a>
+    <a class="navlink link-pop" href="https://www.linkedin.com/in/andrew-gorman/" target="_blank">LinkedIn</a>
+    <a class="navlink link-pop" href="https://github.com/AndrewGorman" target="_blank">GitHub</a>
+    <a class="navlink link-pop" href="https://gitlab.com/AndrewGorman" target="_blank">GitLab</a>
+    <a class="navlink link-pop" href="http://portfolio.andrewgorman.co">Portfolio</a>
+    <a class="navlink link-pop" href="/resume.html">Hire Me</a>
+    <a class="navlink link-pop" href="/">About</a>
   </div>
   <div class="navbar mobile">
     <a class="namehero" href="www.andrewgorman.co">Andrew Gorman</a>
@@ -33,36 +34,170 @@
     </div>
   </div>
   <div>
-    <div class="resumeBody">
-      <ul>
-        <h5>Education:</h5>
-        <li>Bachelor of Arts Degree, Central College, Pella, IA, May 2019 (anticipated)</li>
+    <div class="resumeBody container">
+      <div class="row">
+        <div class="resumeBubble four columns firstBubble">
+          <h2 class="resumeHeader">Education</h2>
+            <ul>
+            <li>Bachelor of Arts Degree, Central College, Pella, IA, May 2019 (anticipated)</li>
+            <h5>Majors</h5>
+            <li>Computer Science</li>
+            <li>Psychology</li>
+            <h5>Campus Involvement</h5>
+            <li>President of Drone Club (2017-present) </li>
+            <li>Vice President of Computer Science Club (2015-2018)</li>
+            <li>Community Outreach Director of Computer Science Club (2015-present)</li>
+            <li>Vice President of Drone Club (2016-2017)</li>
+            <li>Treasurer of Scholte Hall Council (2016-2017)</li>
+          </ul>
+          </ul>
+        </div>
+        <div class="resumeBubble eight columns">
+          <h2 class="resumeHeader">Work Experience</h2>
+          <ul>
+            <H5>Software Development Intern - Lean Technologies (Summer 2018)</H5>
+            <ul>
+              <li>Contributed lean and concise VB.NET code daily to shared git repos</li>
+              <li>Analyzed user feedback regularly and integrated it into development</li>
+              <li>Utilized constant, consistent, and clear communication with team members to ensure peak efficiency</li>
+            </ul>
+            <H5>Student Web Developer - Central College Communications (2016-present)</H5>
+            <ul>
+              <li>Updated college websites daily using WordPress content management</li>
+              <li>Utilized Vagrant, Bash, and Git technologies daily as part of the development cycle</li>
+              <li>Developed custom WordPress themes from scratch for custom projects</li>
+            </ul>
+            <H5>Student Technician - Central College IT Services (2015-present)</H5>
+            <ul>
+              <li>Instructed students & employees on use of electronics and online college services</li>
+              <li>Utilized problem solving skills in repairing malfunctioning electronics</li>
+              <li>Offered guidance in clear and helpful ways using effective interpersonal skills</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="resumeBubble six columns">
+          <h2 class="resumeHeader">Personal Projects</h2>
+          <h5>Apps</h5>
+          <h3>doot</h3>
+          <ul>
+            <li>Created a iOS game from scratch as a means of improving my Swift skills, as well as learning how to leverage SpriteKit and ARKit</li>
+            <li>This app will have a page <a href="http://doot.andrewgorman.co">here</a> once released, with information about downloading it</li>
+            <li>See <a href="http://portfolio.andrewgorman.co">my portfolio page</a> for more detailed information on this project</li>
+          </ul>
+          <h5>Websites</h5>
+          <h3><a href="http://www.upstreamgardens.com" target="_blank">Upstream Gardens</a></h3>
+          <ul>
+            <li>Utilized PHP to make an easily owner updatable small business site</li>
+            <li>See <a href="http://portfolio.andrewgorman.co">my portfolio page</a> for more detailed information on this project</li>
+          </ul>
+          <h3><a href="http://www.andrewgorman.co" target="_blank">AndrewGorman.co</a></h3>
+          <ul>
+            <li>Leveraged my web design skills to design a responsive website from scratch, utilizing several JS libraries to build my own self-promotion platform</li>
+            <li>See <a href="http://portfolio.andrewgorman.co">my portfolio page</a> for more detailed information on this project</li>
+          </ul>
+          <h5 class="desktop">Logo Design (Hover over them with your mouse!)</h5>
+          <h5 class="mobile">Logo Design</h5>
+          <ul>
+            <li>Upstream Gardens logo</li>
+            <img data-tilt data-tilt-scale="1.1" class="upstreamLogo" src="img/upstreamLogo.png" alt="">
+            <li>Personal Logo</li>
+            <img data-tilt data-tilt-scale="1.1" class="actualLogo" src="img/logo.png" alt="">
+          </ul>
 
-        <h5>Majors:</h5>
-        <li>Computer Science & Psychology</li>
-
-        <h5>Experience:</h5>
-        <li>Software Development Intern - Lean Technologies (Summer 2018)</li>
-        <li>Student Web Developer - Central College Communications (2016-present)</li>
-        <li>Student Technician - Central College IT Services (2015-present)</li>
-
-        <h5>Languages:</h5>
-        <li>Proficient in: VB.NET - Java - HTML - CSS - PHP - SQL - Python</li>
-        <li>Currently learning: Swift - JavaScript - C</li>
-
-        <!-- <h5>Frameworks:</h5> -->
-
-        <h5>Campus Involvement:</h5>
-        <li>President of Drone Club (2017-present) Vice President of Computer Science Club (2015-2018)</li>
-        <li>Community Outreach Director of Computer Science Club (2015-2018)</li>
-        <li>Vice President of Drone Club (2016-2017)</li>
-        <li>Treasurer of Scholte Hall Council (2016-2017)</li>
-      </ul>
-
-      <p style="text-align:center;">Please use <a href="https://www.linkedin.com/in/andrew-gorman/" target="_blank">LinkedIn</a> to contact me.</p>
+        </div>
+        <div class="resumeBubble six columns">
+          <h2 class="resumeHeader">Skills and Proficiencies</h2>
+          <div class="row">
+          <h5>Languages</h5>
+          <div class="five columns">
+            <ul>
+            <li>Proficient in:</li>
+            <ul>
+              <li>HTML & CSS</li>
+              <li>PHP</li>
+              <li>Swift</li>
+              <li>Java</li>
+              <li>Visual Basic</li>
+              <li>Python</li>
+            </ul>
+          </div>
+          <div class="five columns">
+            <ul>
+            <li>Currently improving:</li>
+            <ul>
+              <li>JavaScript</li>
+              <li>SQL</li>
+              <li>React</li>
+              <li>C#</li>
+            </ul>
+          </div>
+        </div>
+          <h5>Operating Systems</h5>
+          <ul>
+            <li>MacOS</li>
+            <li>Windows</li>
+            <li>Ubuntu</li>
+          </ul>
+          <h5>Software</h5>
+          <ul>
+            <li>Xcode</li>
+            <li>Visual Studio</li>
+            <li>Adobe Creative Suite</li>
+            <ul>
+              <li>XD</li>
+              <li>Premiere Pro</li>
+              <li>Lightroom</li>
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+          </ul>
+          <h5>Other Technologies</h5>
+          <ul>
+            <li>Git</li>
+            <li>Bash</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="eight columns offset-by-two resumeBubble">
+        <h2 class="resumeHeader">What i'm looking for in a job</h2>
+        <p>I am actively looking for a full time position in the Des Moines area starting May of 2019</p>
+        <p>My main positions of interest are:</p>
+        <ul>
+          <li>Mobile Application Design / iOS Developer</li>
+          <ul>
+            <li>Designing and shipping apps for iOS utilizing my skills in swift,
+              as well as integrating my responsive web design skills </li>
+          </ul>
+          <li>Software Developer</li>
+          <ul>
+            <li>Utilizing my experience either in Visual Basic, Java, or C#, in development of cutting edge software solutions</li>
+          </ul>
+          <li>Web Developer</li>
+          <ul>
+            <li>Utilzing my experience in building and maintaining websites
+              either through static hosting solutions or through a content management
+              service such as wordpress</li>
+          </ul>
+        </ul>
+        <p>My ideal work environment:</p>
+        <ul>
+          <li>Constantly challenges me to learn while developing cutting edge solutions to real world problems</li>
+          <li>Small team environment with high communication</li>
+        </ul>
+        <h5>If you think you have a position I would be a good fit for, please don't hesitate to connect with me on <a href="https://www.linkedin.com/in/andrew-gorman/" target="_blank">LinkedIn</a>!</h5>
+        </div>
+      </div>
     </div>
+    <p class="resumeBubble" style="text-align:center;">Please use <a href="https://www.linkedin.com/in/andrew-gorman/" target="_blank">LinkedIn</a> to contact me.</p>
   </div>
   </div>
+  <script src="js/vanilla-tilt.js"></script>
+  <script>
+		ScrollReveal().reveal('.resumeBubble', { interval: 300, duration: 2000 });
+	</script>
 </body>
 
 </html>

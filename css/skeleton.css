@@ -24,14 +24,12 @@
 - Clearing
 - Media Queries
 */
-
-
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  /* max-width: 960px; */
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
@@ -44,14 +42,15 @@
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 85%;
+    width: 90%;
     padding: 0; }
 }
 
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+@media (min-width: 800px) {
   .container {
-    width: 80%; }
+    width: 96%;
+  }
   .column,
   .columns {
     margin-left: 4%; }
@@ -72,10 +71,8 @@
   .ten.columns                    { width: 82.6666666667%; }
   .eleven.columns                 { width: 91.3333333333%; }
   .twelve.columns                 { width: 100%; margin-left: 0; }
-
   .one-third.column               { width: 30.6666666667%; }
   .two-thirds.column              { width: 65.3333333333%; }
-
   .one-half.column                { width: 48%; }
 
   /* Offsets */
