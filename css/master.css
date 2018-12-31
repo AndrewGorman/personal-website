@@ -20,6 +20,11 @@ html{
   background-size: cover;
 }
 
+.portfolioPage {
+  background: #333333 url(/portfolio/img/backgroundTexture1.png) repeat center center;
+  display: inline;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -116,7 +121,33 @@ p{
   color: white;
 }
 
-.firstBubble{
+.portfolioBubble {
+  border-radius: 15px;
+  padding: 2rem;
+  opacity: .8;
+  margin-top: 5rem;
+  background: url(/portfolio/img/backgroundTexture3.png) repeat center center;
+  color: white;
+}
+
+.portfolioHeader {
+  text-align: center;
+}
+
+.portfolioDate {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.portfolioImage {
+  align-items: center;
+  width: 90%;
+  opacity: 1;
+  margin-left: 5%;
+  height: auto;
+}
+
+.portfolioCopy {
 
 }
 
