@@ -1,0 +1,362 @@
+html{
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 5rem 5rem 5rem;
+}
+
+.row{
+  padding-right: 5rem;
+}
+.mainPage {
+  background: #333333 url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.portfolioPage {
+  background: #333333 url(/portfolio/img/backgroundTexture1.png) repeat center center;
+  display: inline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: #1EAEDB;
+}
+
+a:hover {
+  color: #0FA0CE;
+}
+
+p{
+  font-size: 2rem;
+}
+
+.navbar {
+  height: 7rem;
+  width: 100%;
+  background-color: #333333;
+  border-bottom: 4px solid #B4B4B4;
+  /* position: fixed; */
+}
+
+.navlink {
+  color: white;
+  float: right;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.8rem 1rem 1rem;
+  text-decoration: none;
+  display: inline;
+}
+
+.navlink:hover {
+  color: #7a7a7a;
+}
+
+.namehero {
+  color: white;
+  font-size: 3rem;
+  padding: 1rem 1rem 1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.namehero:hover {
+  color: #7a7a7a;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.pagecontent {
+  border-radius: 5px;
+  min-width: 500px;
+  width: 30%;
+  opacity: .8;
+  float: right;
+  margin: 5rem 5rem 5rem 5rem;
+  background: #454343;
+  color: white;
+}
+
+.textbody {
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+.resumeBody {
+  color: white;
+  /* margin: 3em 5em 5em 20em; */
+  min-width: 300px;
+}
+
+.resumePage {
+  background: #333333 url(/img/resumeBackgroundPattern.png) repeat center center;
+  display: inline;
+}
+
+.resumeBubble {
+  border-radius: 5px;
+  padding: 2rem;
+  opacity: .8;
+  margin-top: 5rem;
+  background: #454343;
+  color: white;
+}
+
+.portfolioBubble {
+  border-radius: 15px;
+  padding: 2rem;
+  opacity: .8;
+  margin-top: 5rem;
+  background: url(/portfolio/img/backgroundTexture3.png) repeat center center;
+  color: white;
+}
+
+.portfolioHeader {
+  text-align: center;
+}
+
+.portfolioDate {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.portfolioImage {
+  align-items: center;
+  width: 90%;
+  opacity: 1;
+  margin-left: 5%;
+  height: auto;
+}
+
+.portfolioCopy {
+
+}
+
+.resumeHeader{
+  text-align: center;
+}
+
+li{
+  font-size: 1.8rem;
+}
+
+/* Link Pop */
+.link-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(2px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+/* Pulse Link Pop */
+@-webkit-keyframes pulse-link-pop {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes pulse-link-pop {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.pulse-link-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.pulse-link-pop:hover, .pulse-link-pop:focus, .pulse-link-pop:active {
+  -webkit-animation-name: pulse-link-pop;
+  animation-name: pulse-link-pop;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.link-pop:hover, .link-pop:focus, .link-pop:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+.actualLogo {
+  padding-left: 2rem;
+  width:50%;
+  height:auto;
+}
+
+.upstreamLogo {
+  padding-left: 2rem;
+  width:80%;
+  height:auto;
+}
+
+@media (max-width: 900px) {
+  html {
+    position: relative;
+  }
+  .navlink {
+    font-size: 1.8rem;
+    padding: 2.1rem 1rem 1rem;
+  }
+  .logoFun {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .mainPage {
+    background: url(/img/MobileBackground1.jpg);
+    background-color: #333333;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  h2{
+    font-size: 2.2rem;
+  }
+  p{
+    font-size: 1.4rem;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .navbar {
+    height: 100px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    border-bottom: 4px solid #B4B4B4;
+  }
+  .navlink {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline;
+    padding-top: 3rem;
+  }
+
+  .namehero {
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .mobiledivider {
+    position: relative;
+    top: -65px;
+    left: 65px;
+    color: #B4B4B4;
+    width: 100%;
+  }
+  .pagecontent {
+    border-radius: 5px;
+    min-width: 300px;
+    width: 80%;
+    opacity: .8;
+    margin: 20rem 5rem 5rem 5rem;
+    background: #454343;
+    color: white;
+  }
+
+  .menuCenter {
+    display: inline-block;
+    text-align: center;
+    margin-top: -3rem;
+  }
+
+  .navbar.mobile {
+    display: inline-block;
+    text-align: center;
+  }
+  .textbody {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+  .resumeBody {
+    color: white;
+    /* margin: 3em 5em 5em 5em; */
+    min-width: 300px;
+  }
+
+  @media (max-width: 440px) {
+    .navbar {
+      height: 100px;
+    }
+
+    .pagecontent {
+      margin: 5rem 5rem 5rem 5rem;
+    }
+  }
+
+  @media (max-width: 240px) {
+    .navbar {
+      height: 100px;
+    }
+    .namehero {
+      padding-bottom: 2rem;
+    }
+    .mainPage{
+      background-image: none;
+      width: 100%;
+    }
+    .resumePage{
+      width: 100%;
+    }
+    .pagecontent {
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      overflow:auto;
+      word-wrap: break-word;
+      max-width: 100% !important;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+}
