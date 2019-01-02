@@ -10,7 +10,7 @@ html{
 }
 
 .row{
-  padding-right: 5rem;
+  /* padding-right: 5rem; */
 }
 .mainPage {
   background: #333333 url(/img/DesktopBackground1.jpg) no-repeat center center fixed;
@@ -141,6 +141,15 @@ p{
   width: 90%;
   opacity: 1;
   margin-left: 5%;
+  height: auto;
+}
+
+.portfolioImageVertical {
+  align-items: center;
+  align-items: center;
+  width: 30%;
+  opacity: 1;
+  margin-left: 35%;
   height: auto;
 }
 

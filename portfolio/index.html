@@ -42,8 +42,74 @@
     <div class="portfolioBubble ten columns">
       <h1 class="portfolioHeader">doot</h1>
       <h3 class="portfolioDate">January 2019</h3>
-      <img class="portfolioImage" src="/portfolio/img/PossibleBackground1.jpg" alt="">
-      <p class="portfolioCopy">test</p>
+      <img class="portfolioImageVertical" src="/portfolio/img/dootGameplayScreencap.png" alt="">
+      <h3>What is doot?</h3>
+      <p class="portfolioCopy">In the fall semester of 2018, I took an App Development course.
+        As a part of this course, we were to develop and write an application for the iOS platform.
+        However, doot has been much longer in the making. I first came up with the idea for doot one year prior,
+        at a hackathon hosted at Iowa State (HackISU), but at the time,
+        I did not have the experience necessary to develop this application properly.
+        I started fresh on doot while doing it as a semester project, and it went much better the second time,
+        now having a background in general app development.
+        I presented doot at the college symposium, as well as during the class presentations.
+        I received a very solid A for my work on the project, and the professor urged me to continue to work on doot,
+        and to eventually launch it on the App Store.
+      </p>
+      <h3>Why I developed doot</h3>
+      <p>I saw a problem with the current selection of iOS games available on the App Store.
+        Most games are either endless, or based upon levels. Both of which serve a great design purpose for developers.
+        They are both designed to suck users in and cause them to play longer than they should.
+        doot attempts to solve this problem by asking the user to input a time they would like to play for.
+        By setting a timer, users can have fun and enjoy the game, without having to worry about playing too long.
+        This makes doot ideal for study breaks or any other activity that requires time management.
+        doot does also offer a Endless Mode that you may leave at any time,
+        however much more focus is given to selecting a time and sticking to that.</p>
+      <h3>Technological challenges</h3>
+      <ul>
+        <li>Adaptable skinned gameplay</li>
+        <ul>
+          <li>Users are able to select one of many skins available. These skins affect core gameplay mechanics,
+            they add effects, and made the game much more of a challenge to develop.
+            In the case of the Space skin, the spaceship adds a particle emitter to the back to simulate flames,
+            and the infinite background is swapped out for a particle emitter to simulate flying through space</li>
+        </ul>
+        <li>Infinite Background</li>
+        <ul>
+          <li>As the game is based around the concept of adaptable-time,
+            I needed to implement a feature that allowed the background to scroll endlessly and seamlessly,
+            without much overhead. I experimented with many implementations,
+            and finally settled on an approach where there are two nodes that contain the background and they continually play leapfrog.
+            This avoids the overhead of continually deleting and re-adding nodes more than needed, and makes for very smooth gameplay</li>
+        </ul>
+        <li>User Referrals</li>
+        <ul>
+          <li>This is a challenge I am currently working on. I believe I will be implementing a firebase backend to solve this</li>
+        </ul>
+      </ul>
+      <h3>Technologies used & Personal skills utilized</h3>
+      <ul>
+        <li>Adobe XD - Storyboarding</li>
+        <ul>
+          <li>The use of XD for initally planning the app cannot be understated. I originally started doing drawings on paper, then moved to doing them in Photoshop.
+          I knew there had to be a better way. I did some research and found that while Sketch was the premiere storyboarding app, XD was included with my current Adobe CC subscription</li>
+          <li>The original App Proposal I drew up (which includes the storyboard mockups done in XD) can be viewed <a href="/portfolio/files/dootAppProposal.pdf" target="_blank">here</a> as a PDF</li>
+        </ul>
+        <li>Adobe Illustrator - Logo and UI design</li>
+        <ul>
+          <li>I chose to develop the logo in Illustrator so that I would have a vector file.
+            I have several projects worth of experience in Illustrator and it has secured a solid spot in my go-to tools for anything visual/logo/UI related</li>
+          <li>I also developed most of the in game elements such as players, doots, and backgrounds in Illustrator as well. This made exporting for different screen sizes a breeze</li>
+        </ul>
+        <li>Xcode</li>
+        <ul>
+          <li>I will update this section once the app is completed and on the App Store, so as to reflect my most complete and current learnings. Check back soon!</li>
+        </ul>
+        <li>Firebase</li>
+        <ul>
+          <li>I will update this section once the app is completed and on the App Store, so as to reflect my most complete and current learnings. Check back soon!</li>
+        </ul>
+      </ul>
+      <h3>Current expected release date: Janurary 2019</h3>
     </div>
   </div>
 
