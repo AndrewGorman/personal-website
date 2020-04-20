@@ -16,17 +16,18 @@
                 <a target="_blank" href="https://www.github.com/andrewgorman/"><img alt="link to Andrew's github"
                                                                                     class="contact-icon" width="100px"
                                                                                     src="@/assets/github.png"></a>
-                <a target="_blank" href="mailto:andrew@andrewgorman.dev"><img alt="link to email application" class="contact-icon" width="100px"
-                                                src="@/assets/email.png"></a>
-                <a target="_blank" href="https://www.linkedin.com/in/andrew-gorman/"><img alt="link to Andrew's LinkedIn" class="contact-icon" width="100px"
-                                                src="@/assets/linkedin.png"></a>
+                <a target="_blank" href="mailto:andrew@andrewgorman.dev"><img alt="link to email application"
+                                                                              class="contact-icon" width="100px"
+                                                                              src="@/assets/email.png"></a>
+                <a target="_blank" href="https://www.linkedin.com/in/andrew-gorman/"><img
+                    alt="link to Andrew's LinkedIn" class="contact-icon" width="100px"
+                    src="@/assets/linkedin.png"></a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-
     export default {
         name: 'Home',
         components: {}
