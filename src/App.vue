@@ -18,4 +18,5 @@
 <style lang="sass">
     @import '@/styles/master.sass'
     @import '@/styles/variables.sass'
+    @import 'styles/pattern.min.css'
 </style>

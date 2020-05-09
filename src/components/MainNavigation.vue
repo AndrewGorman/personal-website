@@ -17,8 +17,6 @@
     @import '@/styles/variables.sass'
 
     .main-nav-container
-        font-family: 'Nunito', sans-serif
-        color: white
         position: fixed
         right: -1rem
         top: 50%
@@ -30,12 +28,9 @@
         padding: 1rem 1.5rem 0.5rem 1.5rem
 
         .nav-item
-            font-size: 1.6rem
-            margin-right: 1rem
             padding: 1rem
             list-style: none
 
-            a.nav-link
-                text-decoration: none !important
-                color: white
+            &:hover
+                font-size: 1.3rem
 </style>

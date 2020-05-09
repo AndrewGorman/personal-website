@@ -1,27 +1,39 @@
 <template>
     <div class="home">
-        <h1 class="header-name-callout">Andrew Gorman</h1>
-        <div
-            class="blue-content-box"
-        >
-            <h2>Hi, I'm Andrew.</h2>
-            <p class="med-text">
-                Full Stack Web Developer <br />
-                App Developer <br />
-                Photographer <br />
-                Freelancer
-            </p>
-            <b-button>Explore my portfolio</b-button>
-            <div class="contact-icons">
-                <a target="_blank" href="https://www.github.com/andrewgorman/"><img alt="link to Andrew's github"
-                                                                                    class="contact-icon" width="100px"
-                                                                                    src="@/assets/github.png"></a>
-                <a target="_blank" href="mailto:andrew@andrewgorman.dev"><img alt="link to email application"
-                                                                              class="contact-icon" width="100px"
-                                                                              src="@/assets/email.png"></a>
-                <a target="_blank" href="https://www.linkedin.com/in/andrew-gorman/"><img
-                    alt="link to Andrew's LinkedIn" class="contact-icon" width="100px"
-                    src="@/assets/linkedin.png"></a>
+        <div class="pattern-dots-md">
+            <h1 class="header-name-callout">Andrew Gorman</h1>
+            <div
+                class="blue-content-box"
+            >
+                <h2>Hi, I'm Andrew.</h2>
+                <p class="med-text">
+                    Full Stack Web Developer <br />
+                    App Developer <br />
+                    Photographer <br />
+                    Freelancer
+                </p>
+                <b-button>Explore my portfolio</b-button>
+                <div class="contact-icons">
+                    <a target="_blank" href="https://www.github.com/andrewgorman/"><img alt="link to Andrew's github"
+                                                                                        class="contact-icon"
+                                                                                        width="100px"
+                                                                                        src="@/assets/github.png"></a>
+                    <a target="_blank" href="mailto:andrew@andrewgorman.dev"><img alt="link to email application"
+                                                                                  class="contact-icon" width="100px"
+                                                                                  src="@/assets/email.png"></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/andrew-gorman/"><img
+                        alt="link to Andrew's LinkedIn" class="contact-icon" width="100px"
+                        src="@/assets/linkedin.png"></a>
+                </div>
+            </div>
+            <!--Poor man feature flag <img class="andrew-image" src="@/assets/andrew2.png">-->
+            <div class="dark-content-box">
+                <div class="nav-row">
+                    <b-nav-item>Education</b-nav-item>
+                    <b-nav-item>Work Experience</b-nav-item>
+                    <b-nav-item>Personal Projects</b-nav-item>
+                    <b-nav-item>Skills & Proficiencies</b-nav-item>
+                </div>
             </div>
         </div>
     </div>
@@ -35,6 +47,8 @@
 </script>
 <style lang="sass">
     @import '@/styles/variables.sass'
+    .home
+        width: 100vw
 
     .header-name-callout
         position: absolute
@@ -75,4 +89,26 @@
             .contact-icon
                 max-width: 69px
                 max-height: 69px
+
+    .dark-content-box
+        display: flex
+        background-color: $light-black
+        border-radius: 10px
+        padding: 2rem
+        margin: 5rem 8rem 5rem 5rem
+        text-align: center
+        z-index: 50
+        min-height: 70vh
+        position: relative
+
+        .nav-row
+            display: inline-flex
+            list-style: none
+            width: 100%
+            justify-content: space-around
+
+            .nav-item:hover
+                transform: translateY(-2px)
+
+
 </style>
