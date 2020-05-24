@@ -1,4 +1,5 @@
 <template>
+    <span>
     <scrollactive
         v-on:itemchanged="onItemChanged"
         class="main-nav-container"
@@ -32,6 +33,10 @@
                 Portfolio
             </a>
     </scrollactive>
+    <div class="mobile-header">
+        <h3>Andrew Gorman</h3>
+    </div>
+    </span>
 </template>
 
 <script>
@@ -51,15 +56,11 @@
             setActive(location) {
                 this.active = location
             },
-            onItemChanged(event, currentItem, lastActiveItem) {
-                console.log(event, currentItem, lastActiveItem);
-                console.log(this.active);
-                String.prototype.trim = function()
-                {
+            onItemChanged(event, currentItem) {
+                String.prototype.trim = function() {
                     return String(this).replace(/^(.)*#/g, '');
                 };
                 this.active = currentItem.href.trim()
-                console.log(this.active);
             },
         },
     }
@@ -79,6 +80,7 @@
         background-color: $light-black
         padding: 1rem 1.5rem 0.5rem 1.5rem
         height: 5.5rem
+        width: fit-content
 
         .nav-item
             list-style: none
@@ -95,5 +97,19 @@
 
         .active-link
             border-bottom: 2px solid $primary
+
+    .mobile-header
+        height: 80px
+        background-color: $dark-black
+        width: 100vw
+        position: fixed
+        top: 0
+        right: 0
+        left: 0
+        z-index: 1000
+        display: flex
+        justify-content: center
+        align-items: center
+
 
 </style>

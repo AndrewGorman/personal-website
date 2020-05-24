@@ -49,7 +49,8 @@
                     <b-tabs pills card>
                         <b-tab title="Education">
                             <div class="education">
-                                <h2 style="margin-bottom: 2rem;">Bachelor of Arts, Central College, Pella, IA, May 2019</h2>
+                                <h2 style="margin-bottom: 2rem;">Bachelor of Arts, Central College, Pella, IA, May
+                                    2019</h2>
                                 <h2>Majors</h2>
                                 <ul class="vertical-list">
                                     <li>Computer Science</li>
@@ -240,6 +241,9 @@
 <style lang="sass">
     @import '@/styles/variables.sass'
 
+    .mobile-header
+        display: none !important
+
     .home
         width: 100vw
 
@@ -249,34 +253,34 @@
             top: 175px
             left: 55%
             z-index: 0
-            -webkit-transition: left 0.5s ease-in-out
-            -moz-transition: left 0.5s ease-in-out
-            -o-transition: left 0.5s ease-in-out
-            transition: left 0.5s ease-in-out
+            -webkit-transition: left 0.25s ease-in-out
+            -moz-transition: left 0.25s ease-in-out
+            -o-transition: left 0.25s ease-in-out
+            transition: left 0.25s ease-in-out
 
-    .header-name-callout
-        position: absolute
-        top: 1rem
-        font-size: 2rem
-        left: 50%
-        transform: translateX(-50%)
-        color: $white
-        z-index: 500
+        .header-name-callout
+            position: absolute
+            top: 1rem
+            font-size: 2rem
+            left: 50%
+            transform: translateX(-50%)
+            color: $white
+            z-index: 500
 
-    .blue-content-box
-        display: flex
-        background-color: $primary
-        border-radius: 10px
-        margin: -1rem 0 0 -1rem
-        padding: 2rem 1rem 1rem 2rem
-        text-align: center
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        width: calc(50vw - 32px)
-        z-index: 1
-        position: relative
-        height: 600px
+        .blue-content-box
+            display: flex
+            background-color: $primary
+            border-radius: 10px
+            margin: -1rem 0 0 -1rem
+            padding: 2rem 1rem 1rem 2rem
+            text-align: center
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            width: calc(50vw + 1rem)
+            z-index: 1
+            position: relative
+            height: 600px
 
         h2
             font-size: 2.5rem
@@ -410,24 +414,107 @@
                         padding: 0 2rem 0 2rem
                         text-align: left
 
+    @media (max-width: $medium-breakpoint)
+        .home
+            .andrew-image
+                left: 55%
+                width: 250px
+                top: 200px
+
+            .blue-content-box
+                width: calc(50vw + 1rem)
+                height: 500px
+
+                .med-text
+                    font-size: 1.3rem
+
+                .contact-icons
+                    margin: 2rem 0 0 0
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: baseline
+                    min-width: 269px
+
+                    .contact-icon
+                        max-width: 45px
+                        max-height: 45px
+
+            .dark-content-box
+                .tab-container
+                    h2
+                        font-size: 1.8rem
+
+                    ul
+                        &.vertical-list
+                            text-align: center
+
+        .featured-projects
+            .featured-row
+                display: flex
+                flex-direction: column
+                align-items: center
+
+                .featured-highlight
+                    margin: 4rem 2rem 2rem 2rem
+                    max-width: 400px
+
+    @media (max-width: $phone-breakpoint)
+        .scrollactive-nav.main-nav-container
+            display: none
+
+        .mobile-header
+            display: flex
+
+        .home
+            .header-name-callout
+                display: none
+
+            .andrew-image
+                display: none
+
+            .blue-content-box
+                width: 100vw
+                right: 0
+                left: 0
+                top: 80px
+                border-radius: 0 0 10px 10px
+                margin: 0
+                height: 500px
+
+                .contact-icons
+                    margin: 3rem 0 0 0
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-around
+                    align-items: baseline
+                    width: 60vw
+
+                    .contact-icon
+                        max-width: 69px
+                        max-height: 69px
+
+            .dark-content-box
+                margin: 7.5rem auto auto auto
+                width: 92vw
+
+
     @media (min-width: $large-breakpoint)
         .home
             .andrew-image
                 left: 59%
 
-        .blue-content-box
-            margin: auto
-            top: -1rem
-            transform: translateX(-50%)
-            width: 735px
-            z-index: 1
-            -webkit-transition: width 0.5s ease-in-out
-            -moz-transition: width 0.5s ease-in-out
-            -o-transition: width 0.5s ease-in-out
-            transition: width 0.5s ease-in-out
+            .blue-content-box
+                margin: auto
+                top: -1rem
+                transform: translateX(-50%)
+                width: 750px
+                z-index: 1
+                -webkit-transition: width 0.5s ease-in-out
+                -moz-transition: width 0.5s ease-in-out
+                -o-transition: width 0.5s ease-in-out
+                transition: width 0.5s ease-in-out
 
         .dark-content-box
             margin: 4rem auto 2rem auto
-
-
 </style>
