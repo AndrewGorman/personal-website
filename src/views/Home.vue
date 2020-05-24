@@ -1,6 +1,6 @@
 <template>
-    <div class="home">
-        <div class="pattern-dots-md">
+    <div>
+        <div id="home" class="home pattern-dots-md">
             <h1 class="header-name-callout">Andrew Gorman</h1>
             <div
                 class="blue-content-box"
@@ -26,15 +26,60 @@
                         src="@/assets/linkedin.png"></a>
                 </div>
             </div>
-            <!--Poor man feature flag <img class="andrew-image" src="@/assets/andrew2.png">-->
-            <div class="dark-content-box">
-                <div class="nav-row">
-                    <b-nav-item>Education</b-nav-item>
-                    <b-nav-item>Work Experience</b-nav-item>
-                    <b-nav-item>Personal Projects</b-nav-item>
-                    <b-nav-item>Skills & Proficiencies</b-nav-item>
-                </div>
+            <img class="andrew-image" src="@/assets/Andrew_bw.png">
+            <div
+                id="about"
+                class="dark-content-box"
+            >
+                <b-card class="tab-container">
+                    <b-tabs pills card>
+                        <b-tab title="Education" active>
+                            <div>Education</div>
+                        </b-tab>
+                        <b-tab title="Work Experience">
+                            <div>Work Experience</div>
+                        </b-tab>
+                        <b-tab title="Skills & Proficiencies">
+                            <div class="row">
+                                <ul class="vertical-list">
+                                    <h2>Languages</h2>
+                                    <li>JavaScript (Vue.js)</li>
+                                    <li>Python</li>
+                                    <li>HTML & CSS/Sass</li>
+                                    <li>Swift</li>
+                                    <li>PHP</li>
+                                    <li>Java</li>
+                                    <li>Visual Basic</li>
+                                    <li>SQL</li>
+                                </ul>
+                                <ul class="vertical-list">
+                                    <h2>Software</h2>
+                                    <li>PyCharm</li>
+                                    <li>Xcode</li>
+                                    <li>Adobe Creative Suite</li>
+                                    <li> - XD</li>
+                                    <li> - Premiere Pro</li>
+                                    <li> - Lightroom</li>
+                                    <li> - Illustrator</li>
+                                    <li> - Photoshop</li>
+                                </ul>
+                                <ul class="vertical-list">
+                                    <h2>Other Technologies</h2>
+                                    <li>Docker</li>
+                                    <li>Git</li>
+                                    <li>Django</li>
+                                    <li>Express/Node.js</li>
+                                    <li>WordPress</li>
+                                    <li>Alexa Skills</li>
+                                </ul>
+                            </div>
+                        </b-tab>
+                    </b-tabs>
+                </b-card>
             </div>
+        </div>
+        <div id="featured-projects" class="featured-projects">
+            <h1>Featured Projects</h1>
         </div>
     </div>
 </template>
@@ -42,13 +87,20 @@
 <script>
     export default {
         name: 'Home',
-        components: {}
+        components: {},
     }
 </script>
 <style lang="sass">
     @import '@/styles/variables.sass'
     .home
         width: 100vw
+
+        .andrew-image
+            max-width: 350px
+            position: absolute
+            top: 200px
+            left: 59%
+            z-index: 0
 
     .header-name-callout
         position: absolute
@@ -57,6 +109,7 @@
         left: 50%
         transform: translateX(-50%)
         color: $white
+        z-index: 500
 
     .blue-content-box
         display: flex
@@ -69,7 +122,9 @@
         justify-content: center
         align-items: center
         width: calc(50vw - 32px)
-        min-height: 70vh
+        z-index: 1
+        position: relative
+        height: 600px
 
         h2
             font-size: 2.5rem
@@ -94,21 +149,65 @@
         display: flex
         background-color: $light-black
         border-radius: 10px
-        padding: 2rem
-        margin: 5rem 8rem 5rem 5rem
+        padding: 0.5rem 2rem 2rem 2rem
+        margin: 5rem 8rem 2rem 5rem
         text-align: center
         z-index: 50
-        min-height: 70vh
         position: relative
+        max-width: 1500px
 
-        .nav-row
-            display: inline-flex
-            list-style: none
+        .tab-container
             width: 100%
-            justify-content: space-around
 
-            .nav-item:hover
-                transform: translateY(-2px)
+            ul
+                padding-left: 0
+                width: 100%
+                display: inline-flex
+                list-style: none
+                justify-content: space-around
+
+                &.vertical-list
+                    display: flex
+                    text-align: left
+                    flex-direction: column
+                    width: fit-content
+
+                li
+                    font-size: 1.2rem
+                    padding-bottom: 0.5rem
+
+            .row
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+
+            .nav-item
+                font-size: 1.4rem
+
+                &:hover
+                    transform: translateY(-5px)
+
+    .featured-projects
+        display: flex
+        justify-content: center
+
+        h1
+            color: white
+
+    @media (min-width: $large-breakpoint)
+        .blue-content-box
+            margin: auto
+            top: -1rem
+            transform: translateX(-50%)
+            width: 735px
+            z-index: 1
+            -webkit-transition: width 0.5s ease-in-out
+            -moz-transition: width 0.5s ease-in-out
+            -o-transition: width 0.5s ease-in-out
+            transition: width 0.5s ease-in-out
+
+        .dark-content-box
+            margin: 4rem auto 2rem auto
 
 
 </style>
