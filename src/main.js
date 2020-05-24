@@ -3,10 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import {BootstrapVue} from 'bootstrap-vue'
-const VueScrollTo = require('vue-scrollto')
+import VueScrollactive from 'vue-scrollactive';
 
-Vue.use(BootstrapVue)
-Vue.use(VueScrollTo)
+Vue.use(BootstrapVue);
+Vue.use(VueScrollactive);
 
 Vue.config.productionTip = false
 
