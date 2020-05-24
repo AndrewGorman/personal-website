@@ -46,7 +46,7 @@
                 class="dark-content-box"
             >
                 <b-card class="tab-container">
-                    <b-tabs v-model="tabIndex" pills card>
+                    <b-tabs pills card>
                         <b-tab title="Education">
                             <div class="education">
                                 <h2 style="margin-bottom: 2rem;">Bachelor of Arts, Central College, Pella, IA, May 2019</h2>

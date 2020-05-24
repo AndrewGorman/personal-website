@@ -3,40 +3,34 @@
         v-on:itemchanged="onItemChanged"
         class="main-nav-container"
     >
-        <b-nav>
-            <b-nav-item
-                data-section-selector="#home"
+            <a
                 class="nav-item scrollactive-item"
+                href="#home"
                 :class="[{'active-link': active === 'home'}]"
-                @click="setActive('home')"
             >
                 Home
-            </b-nav-item>
-            <b-nav-item
-                data-section-selector="#about"
+            </a>
+            <a
                 class="nav-item scrollactive-item"
+                href="#about"
                 :class="[{'active-link': active === 'about'}]"
-                @click="setActive('about')"
             >
                 About
-            </b-nav-item>
-            <b-nav-item
-                data-section-selector="#featured-projects"
+            </a>
+            <a
                 class="nav-item scrollactive-item"
-                :class="[{'active-link': active === 'featured'}]"
-                @click="setActive('featured')"
+                href="#featured-projects"
+                :class="[{'active-link': active === 'featured-projects'}]"
             >
                 Featured Projects
-            </b-nav-item>
-            <b-nav-item
+            </a>
+            <a
                 class="nav-item"
                 :href="portfolioURL"
                 :class="[{'active-link': active === 'portfolio'}]"
-                @click="setActive('portfolio')"
             >
                 Portfolio
-            </b-nav-item>
-        </b-nav>
+            </a>
     </scrollactive>
 </template>
 
@@ -59,6 +53,13 @@
             },
             onItemChanged(event, currentItem, lastActiveItem) {
                 console.log(event, currentItem, lastActiveItem);
+                console.log(this.active);
+                String.prototype.trim = function()
+                {
+                    return String(this).replace(/^(.)*#/g, '');
+                };
+                this.active = currentItem.href.trim()
+                console.log(this.active);
             },
         },
     }
@@ -89,6 +90,8 @@
 
             &:hover
                 font-size: 1.4rem
+                color: $white
+                text-decoration: none
 
         .active-link
             border-bottom: 2px solid $primary
