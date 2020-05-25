@@ -86,7 +86,6 @@
                 Portfolio
             </a>
     </scrollactive>
-
     </div>
     </span>
 </template>

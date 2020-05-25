@@ -5,7 +5,7 @@
             <div
                 class="blue-content-box"
             >
-                <b-avatar class="mobile-avatar" src="https://placekitten.com/300/300" alt="Andrew Gorman Headshot" size="6rem"></b-avatar>
+                <img class="mobile-avatar" src="@/assets/mobile_avatar.jpg" alt="Andrew Gorman Headshot" />
                 <h2>Hi, I'm Andrew.</h2>
                 <p class="med-text">
                     Full Stack Web Developer <br />
@@ -243,7 +243,7 @@
     @import '@/styles/variables.sass'
 
     #app
-        .mobile-header
+        .mobile-header, .slide-out-menu
             display: none
 
     .home
@@ -331,6 +331,7 @@
                     text-align: left
                     flex-direction: column
                     width: fit-content
+                    margin-right: 2rem
 
                 li
                     font-size: 1.2rem
@@ -473,12 +474,19 @@
             .mobile-header
                 display: flex
 
+            .slide-out-menu
+                display: block
+
         .home
             .header-name-callout
                 display: none
 
-            .b-avatar.mobile-avatar.badge-secondary.rounded-circle
+            .mobile-avatar
                 display: block
+                height: 150px
+                width: 150px
+                border-radius: 100px
+                border: 5px solid $white
 
             .andrew-image
                 display: none
@@ -490,7 +498,7 @@
                 top: 80px
                 border-radius: 0 0 10px 10px
                 margin: 0
-                height: 500px
+                height: 650px
 
                 .contact-icons
                     margin: 3rem 0 0 0
