@@ -5,6 +5,7 @@
             <div
                 class="blue-content-box"
             >
+                <b-avatar class="mobile-avatar" src="https://placekitten.com/300/300" alt="Andrew Gorman Headshot" size="6rem"></b-avatar>
                 <h2>Hi, I'm Andrew.</h2>
                 <p class="med-text">
                     Full Stack Web Developer <br />
@@ -241,8 +242,9 @@
 <style lang="sass">
     @import '@/styles/variables.sass'
 
-    .mobile-header
-        display: none !important
+    #app
+        .mobile-header
+            display: none
 
     .home
         width: 100vw
@@ -377,6 +379,7 @@
         flex-direction: column
         justify-content: center
         align-items: center
+        margin-top: 2rem
 
         h1
             color: white
@@ -413,6 +416,9 @@
                         width: 100%
                         padding: 0 2rem 0 2rem
                         text-align: left
+
+    .mobile-avatar
+        display: none
 
     @media (max-width: $medium-breakpoint)
         .home
@@ -463,12 +469,16 @@
         .scrollactive-nav.main-nav-container
             display: none
 
-        .mobile-header
-            display: flex
+        #app
+            .mobile-header
+                display: flex
 
         .home
             .header-name-callout
                 display: none
+
+            .b-avatar.mobile-avatar.badge-secondary.rounded-circle
+                display: block
 
             .andrew-image
                 display: none

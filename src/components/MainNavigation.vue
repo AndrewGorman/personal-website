@@ -35,6 +35,58 @@
     </scrollactive>
     <div class="mobile-header">
         <h3>Andrew Gorman</h3>
+        <tasty-burger-button
+            active-color="#3759BA"
+            class="hamburger-icon"
+            color="#EFEFEF"
+            size="m"
+            type="emphatic"
+            v-on:toggle="onToggle"
+        />
+    </div>
+    <div
+        class="slide-out-menu"
+        :class="[{'show': showingMenu}]"
+    >
+        <scrollactive
+            v-on:itemchanged="onItemChanged"
+            class="mobile-nav-container"
+            :offset="90"
+        >
+            <a
+                class="nav-item scrollactive-item"
+                href="#home"
+                :class="[{'active-link': active === 'home'}]"
+                @click="itemClicked"
+            >
+                Home
+            </a>
+            <a
+                class="nav-item scrollactive-item"
+                href="#about"
+                :class="[{'active-link': active === 'about'}]"
+                @click="itemClicked"
+            >
+                About
+            </a>
+            <a
+                class="nav-item scrollactive-item"
+                href="#featured-projects"
+                :class="[{'active-link': active === 'featured-projects'}]"
+                @click="itemClicked"
+            >
+                Featured Projects
+            </a>
+            <a
+                class="nav-item"
+                :href="portfolioURL"
+                :class="[{'active-link': active === 'portfolio'}]"
+                @click="itemClicked"
+            >
+                Portfolio
+            </a>
+    </scrollactive>
+
     </div>
     </span>
 </template>
@@ -45,6 +97,8 @@
         data() {
             return {
                 active: 'home',
+                showingMenu: false,
+                preventLoop: false,
             };
         },
         computed: {
@@ -62,7 +116,13 @@
                 };
                 this.active = currentItem.href.trim()
             },
-        },
+            onToggle(state) {
+                this.showingMenu = state;
+            },
+            itemClicked() {
+                this.$el.querySelector('.hamburger').click();
+            }
+        }
     }
 </script>
 
@@ -106,10 +166,42 @@
         top: 0
         right: 0
         left: 0
-        z-index: 1000
+        z-index: 2000
         display: flex
         justify-content: center
         align-items: center
 
+        .hamburger-icon
+            position: absolute
+            right: 20px
+            z-index: 2000
+
+    .slide-out-menu
+        min-height: 100vh
+        min-width: 100vw
+        top: 0
+        bottom: 0
+        left: 100vw
+        background-color: $dark-black
+        z-index: 1000
+        position: fixed
+        padding: 100px 1rem 1rem 1rem
+        -webkit-transition: left 0.25s ease-in-out
+        -moz-transition: left 0.25s ease-in-out
+        -o-transition: left 0.25s ease-in-out
+        transition: left 0.25s ease-in-out
+
+        &.show
+            left: 0
+
+        .mobile-nav-container
+            height: 80vh
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            text-align: center
+
+            .nav-item
+                font-size: 2.5rem
 
 </style>
