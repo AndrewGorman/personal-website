@@ -34,7 +34,7 @@
             </a>
     </scrollactive>
     <div class="mobile-header">
-        <h3>Andrew Gorman</h3>
+        <h4>Andrew Gorman</h4>
         <tasty-burger-button
             active-color="#3759BA"
             class="hamburger-icon"
@@ -46,7 +46,7 @@
     </div>
     <div
         class="slide-out-menu"
-        :class="[{'show': showingMenu}]"
+        :class="[{'show': showingMenu, 'hidden': !showingMenu}]"
     >
         <scrollactive
             v-on:itemchanged="onItemChanged"
@@ -103,6 +103,15 @@
         computed: {
             portfolioURL() {
                 return process.env.VUE_APP_PORTFOLIO_LINK;
+            }
+        },
+        watch: {
+            showingMenu() {
+                if (this.showingMenu) {
+                    document.documentElement.style.overflow = 'hidden'
+                } else {
+                    document.documentElement.style.overflow = 'auto'
+                }
             }
         },
         methods: {
@@ -170,6 +179,10 @@
         justify-content: center
         align-items: center
 
+        h4
+            margin: 0
+            padding: 0
+
         .hamburger-icon
             position: absolute
             right: 20px
@@ -180,21 +193,22 @@
         min-width: 100vw
         top: 0
         bottom: 0
-        left: 100vw
+        left: 125vw
         background-color: $dark-black
         z-index: 1000
         position: fixed
         padding: 100px 1rem 1rem 1rem
-        -webkit-transition: left 0.25s ease-in-out
-        -moz-transition: left 0.25s ease-in-out
-        -o-transition: left 0.25s ease-in-out
-        transition: left 0.25s ease-in-out
+        -webkit-transition: left 0.5s ease-in-out
+        -moz-transition: left 0.5s ease-in-out
+        -o-transition: left 0.5s ease-in-out
+        transition: left 0.5s ease-in-out
 
         &.show
+            display: block
             left: 0
 
         .mobile-nav-container
-            height: 80vh
+            height: 60vh
             display: flex
             flex-direction: column
             justify-content: space-around

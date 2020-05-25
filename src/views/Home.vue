@@ -41,7 +41,7 @@
                     </a>
                 </div>
             </div>
-            <img alt="Andrew Gorman headshot" class="andrew-image" src="@/assets/Andrew_bw.png">
+            <img alt="Andrew Gorman headshot" class="andrew-image" src="@/assets/andrew_bw.png">
             <div
                 id="about"
                 class="dark-content-box"
@@ -243,7 +243,7 @@
     @import '@/styles/variables.sass'
 
     #app
-        .mobile-header, .slide-out-menu
+        .slide-out-menu, .mobile-header
             display: none
 
     .home
@@ -331,7 +331,7 @@
                     text-align: left
                     flex-direction: column
                     width: fit-content
-                    margin-right: 2rem
+                    margin: 0 2rem 1rem 2rem
 
                 li
                     font-size: 1.2rem
@@ -467,15 +467,16 @@
                     max-width: 400px
 
     @media (max-width: $phone-breakpoint)
+        #app
+            .slide-out-menu
+                display: block
+
         .scrollactive-nav.main-nav-container
             display: none
 
         #app
             .mobile-header
                 display: flex
-
-            .slide-out-menu
-                display: block
 
         .home
             .header-name-callout
@@ -487,6 +488,7 @@
                 width: 150px
                 border-radius: 100px
                 border: 5px solid $white
+                margin-bottom: 1rem
 
             .andrew-image
                 display: none
@@ -506,7 +508,7 @@
                     flex-direction: row
                     justify-content: space-around
                     align-items: baseline
-                    width: 60vw
+                    width: 90vw
 
                     .contact-icon
                         max-width: 69px
@@ -514,7 +516,42 @@
 
             .dark-content-box
                 margin: 7.5rem auto auto auto
-                width: 92vw
+                width: 100vw
+
+                .nav.nav-pills.card-header-pills, .card-header
+                    padding: 0 0 0.5rem 0
+
+                    .nav-link
+                        font-size: 1rem
+
+        .featured-projects
+            h1
+                margin: 0 auto 2rem auto
+                padding: 1rem
+
+            .featured-row
+                max-width: 100vw
+
+                .featured-highlight
+                    margin: 2rem 1rem 1rem 1rem
+
+                    .featured-project
+                        padding: 2rem 0.5rem 2rem 0.5rem
+                        height: 400px
+                        width: 300px
+
+                        h3
+                            text-align: center
+
+                        .intro
+                            width: 100%
+                            font-size: 1rem
+                            text-align: center
+
+                        .description
+                            width: 100%
+                            padding: 0 2rem 0 2rem
+                            text-align: left
 
 
     @media (min-width: $large-breakpoint)
