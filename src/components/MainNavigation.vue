@@ -149,11 +149,13 @@
         padding: 1rem 1.5rem 0.5rem 1.5rem
         height: 5.5rem
         width: fit-content
+        min-width: 580px
 
         .nav-item
             list-style: none
             padding: 1rem 1rem 0 1rem
             margin-bottom: 0.5rem
+            white-space: nowrap
 
             .nav-link
                 padding: 0
@@ -221,6 +223,7 @@
         .main-nav-container
             padding: 1rem 1.5rem 0.5rem 1.5rem
             height: 5rem
+            min-width: 0
 
             .nav-item
                 font-size: 2vh

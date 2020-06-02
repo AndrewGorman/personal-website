@@ -1,4 +1,4 @@
-# personal-website
+# andrewgorman.dev
 
 ## Project setup
 ```
