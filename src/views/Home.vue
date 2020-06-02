@@ -50,15 +50,15 @@
                     <b-tabs pills card>
                         <b-tab title="Education">
                             <div class="education">
-                                <h2 style="margin-bottom: 2rem;">Bachelor of Arts, Central College, Pella, IA, May
-                                    2019</h2>
-                                <h2>Majors</h2>
+                                <h3 style="margin-bottom: 2rem;">Bachelor of Arts, Central College, Pella, IA, May
+                                    2019</h3>
+                                <h3>Majors</h3>
                                 <ul class="vertical-list">
                                     <li>Computer Science</li>
                                     <li>Psychology</li>
                                 </ul>
 
-                                <h2>Campus Involvement</h2>
+                                <h3>Campus Involvement</h3>
                                 <ul class="vertical-list">
                                     <li>President of Drone Club (2017-2019)</li>
                                     <li>Community Outreach Director of Computer Science Club (2015-2019)</li>
@@ -71,14 +71,14 @@
                         </b-tab>
                         <b-tab title="Work Experience">
                             <div class="work-experience">
-                                <h2>Full Stack Web Developer - IMT Insurance (May 2019 - Present)</h2>
+                                <h3>Full Stack Web Developer - IMT Insurance (May 2019 - Present)</h3>
                                 <ul class="vertical-list">
-                                    <li>Need to add</li>
-                                    <li>Bullet points</li>
-                                    <li>For this</li>
+                                    <li>Develop and maintain full-stack applications built with modern languages on cutting edge frameworks</li>
+                                    <li>Keep codebase lean and focused by engaging with team members daily in code review sessions</li>
+                                    <li>Integrate with existing legacy systems to meet business needs</li>
                                 </ul>
 
-                                <h2>Software Development Intern - Lean Technologies (Summer 2018)</h2>
+                                <h3>Software Development Intern - Lean Technologies (Summer 2018)</h3>
                                 <ul class="vertical-list">
                                     <li>Contributed lean and concise VB.NET code daily to shared git repos</li>
                                     <li>Analyzed user feedback regularly and integrated it into development</li>
@@ -88,7 +88,7 @@
                                     </li>
                                 </ul>
 
-                                <h2>Student Web Developer - Central College Communications (2016-2019)</h2>
+                                <h3>Student Web Developer - Central College Communications (2016-2019)</h3>
                                 <ul class="vertical-list">
                                     <li>Updated college websites daily using WordPress content management</li>
                                     <li>Utilized Vagrant, Bash, and Git technologies daily as part of the development
@@ -97,7 +97,7 @@
                                     <li>Developed custom WordPress themes from scratch for custom projects</li>
                                 </ul>
 
-                                <h2>Student Technician - Central College IT Services (2015-2019)</h2>
+                                <h3>Student Technician - Central College IT Services (2015-2019)</h3>
                                 <ul class="vertical-list">
                                     <li>Instructed students & employees on use of electronics and online college
                                         services
@@ -112,7 +112,7 @@
                         <b-tab title="Skills & Proficiencies" active>
                             <div class="row">
                                 <ul class="vertical-list">
-                                    <li><h2>Languages</h2></li>
+                                    <li><h3>Languages</h3></li>
                                     <li>JavaScript</li>
                                     <li>Python</li>
                                     <li>HTML & CSS/Sass</li>
@@ -123,7 +123,7 @@
                                     <li>SQL</li>
                                 </ul>
                                 <ul class="vertical-list">
-                                    <li><h2>Software</h2></li>
+                                    <li><h3>Software</h3></li>
                                     <li>PyCharm</li>
                                     <li>Xcode</li>
                                     <li>Adobe Creative Suite</li>
@@ -134,7 +134,7 @@
                                     <li> - Photoshop</li>
                                 </ul>
                                 <ul class="vertical-list">
-                                    <li><h2>Frameworks & Other Technologies</h2></li>
+                                    <li><h3>Frameworks & Other Technologies</h3></li>
                                     <li>Vue.js</li>
                                     <li>Django</li>
                                     <li>Git</li>
@@ -319,6 +319,10 @@
             background-color: $light-black
             border: none
 
+            .card-body
+                .card-header
+                    background-color: $light-black !important
+
             ul
                 padding-left: 0
                 width: 100%
@@ -328,6 +332,7 @@
 
                 &.vertical-list
                     display: flex
+                    align-items: flex-start
                     text-align: left
                     flex-direction: column
                     width: fit-content
@@ -520,6 +525,7 @@
 
                 .nav.nav-pills.card-header-pills, .card-header
                     padding: 0 0 0.5rem 0
+                    background-color: $light-black
 
                     .nav-link
                         font-size: 1rem

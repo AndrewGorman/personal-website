@@ -217,4 +217,15 @@
             .nav-item
                 font-size: 2.5rem
 
+    @media (max-height: 600px)
+        .main-nav-container
+            padding: 1rem 1.5rem 0.5rem 1.5rem
+            height: 5rem
+
+            .nav-item
+                font-size: 2vh
+                list-style: none
+                padding: 1rem 1rem 0 1rem
+                margin-bottom: 0.5rem
+
 </style>
