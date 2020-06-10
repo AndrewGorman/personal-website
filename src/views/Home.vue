@@ -24,20 +24,22 @@
                 </b-button>
                 <div class="contact-icons">
                     <a target="_blank" rel="noopener" href="https://www.github.com/andrewgorman/">
-                        <img alt="link to Andrew's github"
-                             class="contact-icon"
-                             width="100px"
-                             src="@/assets/github.png">
+                        <font-awesome-icon
+                            class="contact-icon"
+                            :icon="['fab',  'github']"
+                        />
                     </a>
                     <a target="_blank" rel="noopener" href="mailto:andrew@andrewgorman.dev">
-                        <img alt="link to email application"
-                             class="contact-icon" width="100px"
-                             src="@/assets/email.png">
+                        <font-awesome-icon
+                            class="contact-icon"
+                            :icon="['fal',  'envelope']"
+                        />
                     </a>
                     <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/andrew-gorman/">
-                        <img
-                            alt="link to Andrew's LinkedIn" class="contact-icon" width="100px"
-                            src="@/assets/linkedin.png">
+                        <font-awesome-icon
+                            class="contact-icon"
+                            :icon="['fab',  'linkedin-in']"
+                        />
                     </a>
                 </div>
             </div>
@@ -46,8 +48,24 @@
                 id="about"
                 class="dark-content-box"
             >
+                <div class="mobile-card-header">
+
+                    <font-awesome-icon
+                        style="color: white;"
+                        size="4x"
+                        :icon="['fal',  'angle-left']"
+                        @click="decreaseAboutTab"
+                    />
+                    <p class="mobile-tab-header nav-item">{{tabTitles[currentAboutTab]}}</p>
+                    <font-awesome-icon
+                        style="color: white;"
+                        size="4x"
+                        :icon="['fal',  'angle-right']"
+                        @click="increaseAboutTab"
+                    />
+                </div>
                 <b-card class="tab-container">
-                    <b-tabs pills card>
+                    <b-tabs v-model="currentAboutTab" pills card>
                         <b-tab title="Education">
                             <div class="education">
                                 <h3 style="margin-bottom: 2rem;">Bachelor of Arts, Central College, Pella, IA, May
@@ -73,8 +91,12 @@
                             <div class="work-experience">
                                 <h3>Full Stack Web Developer - IMT Insurance (May 2019 - Present)</h3>
                                 <ul class="vertical-list">
-                                    <li>Develop and maintain full-stack applications built with modern languages on cutting edge frameworks</li>
-                                    <li>Keep codebase lean and focused by engaging with team members daily in code review sessions</li>
+                                    <li>Develop and maintain full-stack applications built with modern languages on
+                                        cutting edge frameworks
+                                    </li>
+                                    <li>Keep codebase lean and focused by engaging with team members daily in code
+                                        review sessions
+                                    </li>
                                     <li>Integrate with existing legacy systems to meet business needs</li>
                                 </ul>
 
@@ -165,7 +187,7 @@
                             pill
                             size="lg"
                             variant="light"
-                            :href="portfolioURL + '/#dev-poker'"
+                            href="https://www.devpoker.app"
                         >
                             Learn More
                         </b-button>
@@ -183,7 +205,7 @@
                             pill
                             size="lg"
                             variant="light"
-                            :href="portfolioURL + '/#music-link'"
+                            href="https://www.musiclink.app/"
                         >
                             Learn More
                         </b-button>
@@ -237,6 +259,32 @@
                 return process.env.VUE_APP_PORTFOLIO_LINK;
             }
         },
+        mounted() {
+          //setInterval(() => {if (!this.hoveringAbout) {this.increaseAboutTab()}}, 10000);
+        },
+        data() {
+            return {
+                currentAboutTab: 2,
+                hoveringAbout: false,
+                tabTitles: ['Education', 'Work Experience', 'Skills & Proficiencies'],
+            };
+        },
+        methods: {
+            increaseAboutTab() {
+                if (this.currentAboutTab === 2) {
+                    this.currentAboutTab = 0;
+                } else {
+                    this.currentAboutTab += 1;
+                }
+            },
+            decreaseAboutTab() {
+                if (this.currentAboutTab === 0) {
+                    this.currentAboutTab = 2;
+                } else {
+                    this.currentAboutTab -= 1;
+                }
+            },
+        }
     }
 </script>
 <style lang="sass">
@@ -300,8 +348,9 @@
             min-width: 350px
 
             .contact-icon
-                max-width: 69px
-                max-height: 69px
+                color: $dark-black
+                width: 69px
+                height: 69px
 
     .dark-content-box
         display: flex
@@ -313,6 +362,9 @@
         z-index: 50
         position: relative
         max-width: 1500px
+
+        .mobile-card-header
+            display: none
 
         .tab-container
             width: 100%
@@ -386,6 +438,8 @@
         justify-content: center
         align-items: center
         margin-top: 2rem
+        min-height: 98vh
+        margin-bottom: 1rem
 
         h1
             color: white
@@ -441,7 +495,7 @@
                     font-size: 1.3rem
 
                 .contact-icons
-                    margin: 2rem 0 0 0
+                    margin: 2.5rem 0 0 0
                     display: flex
                     flex-direction: row
                     justify-content: space-between
@@ -449,11 +503,31 @@
                     min-width: 269px
 
                     .contact-icon
-                        max-width: 45px
-                        max-height: 45px
+                        width: 45px
+                        height: 45px
 
             .dark-content-box
+                display: flex
+                flex-direction: column
+
+                .card-header
+                    display: none
+
+                .mobile-card-header
+                    display: flex
+                    margin: auto
+                    width: 100%
+                    justify-content: space-between
+                    align-items: center
+
+                    .mobile-tab-header
+                        color: white
+                        font-size: 1.8rem
+                        margin: 0
+
                 .tab-container
+                    .card-body
+                        padding: 15px 5px 5px 5px
                     h2
                         font-size: 1.8rem
 
@@ -482,6 +556,7 @@
         #app
             .mobile-header
                 display: flex
+                border-bottom: 2px solid $primary
 
         .home
             .header-name-callout
@@ -502,13 +577,20 @@
                 width: 100vw
                 right: 0
                 left: 0
-                top: 80px
+                top: 0
                 border-radius: 0 0 10px 10px
                 margin: 0
-                height: 650px
+                height: 725px
+                padding-top: 6rem
+
+                h2
+                    font-size: 2rem
+
+                .med-text
+                    font-size: 1.2rem
 
                 .contact-icons
-                    margin: 3rem 0 0 0
+                    margin: 4rem 0 0 0
                     display: flex
                     flex-direction: row
                     justify-content: space-around
@@ -516,11 +598,11 @@
                     width: 90vw
 
                     .contact-icon
-                        max-width: 69px
-                        max-height: 69px
+                        width: 55px
+                        height: 55px
 
             .dark-content-box
-                margin: 7.5rem auto auto auto
+                margin: 3.5rem auto auto auto
                 width: 100vw
 
                 .nav.nav-pills.card-header-pills, .card-header
@@ -528,12 +610,14 @@
                     background-color: $light-black
 
                     .nav-link
-                        font-size: 1rem
+                        font-size: 1.2rem
+                        margin-top: 1rem
 
         .featured-projects
             h1
                 margin: 0 auto 2rem auto
                 padding: 1rem
+                font-size: 1.8rem
 
             .featured-row
                 max-width: 100vw
@@ -542,8 +626,8 @@
                     margin: 2rem 1rem 1rem 1rem
 
                     .featured-project
-                        padding: 2rem 0.5rem 2rem 0.5rem
-                        height: 400px
+                        padding: 2rem 0.5rem 3rem 0.5rem
+                        min-height: 450px
                         width: 300px
 
                         h3

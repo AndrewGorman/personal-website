@@ -204,20 +204,29 @@
         -moz-transition: left 0.5s ease-in-out
         -o-transition: left 0.5s ease-in-out
         transition: left 0.5s ease-in-out
+        display: flex !important
+        flex-direction: column
+        justify-content: center
+        align-items: center
 
         &.show
             display: block
             left: 0
 
         .mobile-nav-container
-            height: 60vh
             display: flex
             flex-direction: column
-            justify-content: space-around
             text-align: center
+            margin: auto
+            min-width: 100vw
+            overflow-x: hidden
 
             .nav-item
-                font-size: 2.5rem
+                font-size: 1.5rem
+                margin-bottom: 5rem
+
+                &:hover
+                    text-decoration: none
 
     @media (max-height: 600px)
         .main-nav-container
