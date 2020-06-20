@@ -46,7 +46,7 @@
     </div>
     <div
         class="slide-out-menu"
-        :class="[{'show': showingMenu, 'hidden': !showingMenu}]"
+        :class="[{'show': showingMenu, 'hidden': !shouldRenderMenu}]"
     >
         <scrollactive
             v-on:itemchanged="onItemChanged"
@@ -97,41 +97,45 @@
             return {
                 active: 'home',
                 showingMenu: false,
-                preventLoop: false,
+                shouldRenderMenu: false,
             };
         },
         computed: {
             portfolioURL() {
                 return process.env.VUE_APP_PORTFOLIO_LINK;
-            }
+            },
         },
         watch: {
             showingMenu() {
                 if (this.showingMenu) {
-                    document.documentElement.style.overflow = 'hidden'
+                    document.documentElement.style.overflow = 'hidden';
                 } else {
-                    document.documentElement.style.overflow = 'auto'
+                    document.documentElement.style.overflow = 'auto';
                 }
-            }
+            },
         },
         methods: {
-            setActive(location) {
-                this.active = location
-            },
             onItemChanged(event, currentItem) {
                 String.prototype.trim = function() {
                     return String(this).replace(/^(.)*#/g, '');
                 };
-                this.active = currentItem.href.trim()
+                this.active = currentItem.href.trim();
             },
             onToggle(state) {
-                this.showingMenu = state;
+                if (state) {
+                    this.shouldRenderMenu = true;
+                    setTimeout(() => this.showingMenu = true, 10);
+                } else {
+                    this.showingMenu = false;
+                    setTimeout(() => this.shouldRenderMenu = false, 500);
+
+                }
             },
             itemClicked() {
                 this.$el.querySelector('.hamburger').click();
-            }
-        }
-    }
+            },
+        },
+    };
 </script>
 
 <style scoped lang="sass">
@@ -212,6 +216,9 @@
         &.show
             display: block
             left: 0
+
+        &.hidden
+            display: none !important
 
         .mobile-nav-container
             display: flex
