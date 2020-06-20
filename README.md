@@ -1,34 +1,21 @@
-# andrewgorman.dev
+# AndrewGorman.dev
+![Website](https://img.shields.io/website?down_message=down%20for%20maintenance&label=website&up_message=online&url=https%3A%2F%2Fwww.andrewgorman.dev) ![GitHub repo size](https://img.shields.io/github/repo-size/andrewgorman/personal-website)
 
-## Project setup
-```
-npm install
-```
+## Demo
+This is the repo for my personal website, you can check it out in production at [andrewgorman.dev](https://www.andrewgorman.dev/)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## The tech
+- [Vue.js](https://github.com/vuejs/vue-cli)
+- [Bootstrap-vue](https://bootstrap-vue.org/)
+- [Sass](https://sass-lang.com/)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Features
+- Single page application
+- Features top 4 projects on my portfolio 
 
-### Run your unit tests
+## Running locally
+```bash
+$ npm install && npm run serve
 ```
-npm run test:unit
-```
+Should be visible at http:///localhost:8080
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
