@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="home" class="home pattern-dots-md">
+        <div id="home" class="home">
             <h1 class="header-name-callout">Andrew Gorman</h1>
             <div
                 class="blue-content-box"
@@ -56,7 +56,7 @@
                         :icon="['fal',  'angle-left']"
                         @click="decreaseAboutTab"
                     />
-                    <p class="mobile-tab-header nav-item">{{tabTitles[currentAboutTab]}}</p>
+                    <p class="mobile-tab-header nav-item">{{ tabTitles[currentAboutTab] }}</p>
                     <font-awesome-icon
                         style="color: white;"
                         size="4x"
@@ -137,7 +137,7 @@
                                     <li><h3>Languages</h3></li>
                                     <li>JavaScript</li>
                                     <li>Python</li>
-                                    <li>HTML & CSS/Sass</li>
+                                    <li>HTML & CSS (Sass)</li>
                                     <li>Swift</li>
                                     <li>PHP</li>
                                     <li>Java</li>
@@ -156,7 +156,7 @@
                                     <li> - Photoshop</li>
                                 </ul>
                                 <ul class="vertical-list">
-                                    <li><h3>Frameworks & Other Technologies</h3></li>
+                                    <li><h3>Frameworks & Misc</h3></li>
                                     <li>Vue.js</li>
                                     <li>Django</li>
                                     <li>Git</li>
@@ -183,14 +183,26 @@
                         <p class="description">DevPoker integrates directly with Jira, Gitlab, and Github APIs to
                             automagically save your weights, comments and story edits, dramatically reducing time spent
                             in planning sessions</p>
-                        <b-button
-                            pill
-                            size="lg"
-                            variant="light"
-                            href="https://www.devpoker.app"
-                        >
-                            Learn More
-                        </b-button>
+                        <div class="button-row">
+                            <b-button
+                                pill
+                                size="lg"
+                                variant="light"
+                                target="_blank"
+                                :href="portfolioURL + '/#devpoker'"
+                            >
+                                Learn More
+                            </b-button>
+                            <b-button
+                                pill
+                                size="lg"
+                                variant="light"
+                                target="_blank"
+                                href="https://www.devpoker.app"
+                            >
+                                Check it out
+                            </b-button>
+                        </div>
                     </div>
                 </div>
                 <div class="featured-highlight pattern-diagonal-lines-sm gray-lighter">
@@ -201,14 +213,26 @@
                         <p class="description">MusicLink allows you to share songs with your friends - regardless of
                             what streaming platform they use. Oh, and it's also a fully featured end to end encrypted
                             messaging service with social aspects</p>
-                        <b-button
-                            pill
-                            size="lg"
-                            variant="light"
-                            href="https://www.musiclink.app/"
-                        >
-                            Learn More
-                        </b-button>
+                        <div class="button-row">
+                            <b-button
+                                pill
+                                size="lg"
+                                variant="light"
+                                target="_blank"
+                                :href="portfolioURL + '/#musiclink'"
+                            >
+                                Learn More
+                            </b-button>
+                            <b-button
+                                pill
+                                size="lg"
+                                variant="light"
+                                target="_blank"
+                                href="https://www.musiclink.app"
+                            >
+                                Check it out
+                            </b-button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,38 +262,138 @@
                             pill
                             size="lg"
                             variant="light"
-                            disabled
-                            :href="portfolioURL"
+                            :href="portfolioURL + '/#monstar-trucks'"
                         >
                             Learn More
                         </b-button>
                     </div>
                 </div>
             </div>
+            <b-button
+                class="portfolio-button"
+                pill
+                size="lg"
+                variant="light"
+                :href="portfolioURL"
+            >
+                Explore more projects
+            </b-button>
         </div>
     </div>
 </template>
 
 <script>
+    import * as Three from 'three';
+
     export default {
         name: 'Home',
         components: {},
         computed: {
             portfolioURL() {
                 return process.env.VUE_APP_PORTFOLIO_LINK;
-            }
+            },
         },
         mounted() {
-          //setInterval(() => {if (!this.hoveringAbout) {this.increaseAboutTab()}}, 10000);
+            if (window.innerWidth >= 800 || screen.width >= 800) {
+                this.init();
+                this.animate();
+            }
         },
         data() {
             return {
+                separation: 100,
+                amountx: 200,
+                amounty: 150,
+                container: null,
+                stats: null,
+                camera: null,
+                scene: null,
+                renderer: null,
+                particles: null,
+                count: 0,
                 currentAboutTab: 2,
                 hoveringAbout: false,
                 tabTitles: ['Education', 'Work Experience', 'Skills & Proficiencies'],
             };
         },
         methods: {
+            init() {
+                const container = document.getElementById('home');
+                this.camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+                this.camera.position.x = 0;
+                this.camera.position.y = 800;
+                this.camera.position.z = 1000;
+
+                this.scene = new Three.Scene();
+
+                this.camera.lookAt(this.scene.position);
+
+                const numParticles = this.amountx * this.amounty;
+                const positions = new Float32Array(numParticles * 3);
+                const scales = new Float32Array(numParticles);
+
+                let i = 0, j = 0;
+
+                for (let ix = 0; ix < this.amountx; ix++) {
+                    for (let iy = 0; iy < this.amounty; iy++) {
+                        positions[i] = ix * this.separation - ((this.amountx * this.separation) / 2); // x
+                        positions[i + 1] = 0; // y
+                        positions[i + 2] = iy * this.separation - ((this.amounty * this.separation) / 2); // z
+                        scales[j] = 1;
+                        i += 3;
+                        j++;
+                    }
+                }
+
+                const geometry = new Three.BufferGeometry();
+                geometry.setAttribute('position', new Three.BufferAttribute(positions, 3));
+                geometry.setAttribute('scale', new Three.BufferAttribute(scales, 1));
+
+                const material = new Three.MeshBasicMaterial();
+
+                this.particles = new Three.Points(geometry, material);
+                this.scene.add(this.particles);
+
+                this.renderer = new Three.WebGLRenderer({antialias: true, alpha: true});
+                this.renderer.setClearColor(0xffffff, 0);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                container.appendChild(this.renderer.domElement);
+
+                window.addEventListener('resize', this.onWindowResize, false);
+            },
+            animate() {
+                requestAnimationFrame(this.animate);
+
+                this.render();
+            },
+            render() {
+                const positions = this.particles.geometry.attributes.position.array;
+                const scales = this.particles.geometry.attributes.scale.array;
+                let i = 0, j = 0;
+                for (let ix = 0; ix < this.amountx; ix++) {
+                    for (let iy = 0; iy < this.amounty; iy++) {
+                        positions[i + 1] = (Math.sin((ix + this.count) * 0.3) * 50) +
+                            (Math.sin((iy + this.count) * 0.5) * 50);
+                        scales[j] = (Math.sin((ix + this.count) * 0.3) + 1) * 20 +
+                            (Math.sin((iy + this.count) * 0.5) + 1) * 20;
+                        i += 3;
+                        j++;
+                    }
+                }
+
+                this.particles.geometry.attributes.position.needsUpdate = true;
+                this.particles.geometry.attributes.scale.needsUpdate = true;
+                this.renderer.render(this.scene, this.camera);
+                this.count += 0.1;
+            },
+            onWindowResize() {
+                this.camera.aspect = window.innerWidth / window.innerHeight;
+                this.camera.updateProjectionMatrix();
+
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+
+            },
             increaseAboutTab() {
                 if (this.currentAboutTab === 2) {
                     this.currentAboutTab = 0;
@@ -284,8 +408,8 @@
                     this.currentAboutTab -= 1;
                 }
             },
-        }
-    }
+        },
+    };
 </script>
 <style lang="sass">
     @import '@/styles/variables.sass'
@@ -297,12 +421,17 @@
     .home
         width: 100vw
 
+        canvas
+            position: absolute
+            top: 0
+            z-index: 0
+
         .andrew-image
             max-width: 350px
             position: absolute
             top: 175px
             left: 55%
-            z-index: 0
+            z-index: 1
             -webkit-transition: left 0.25s ease-in-out
             -moz-transition: left 0.25s ease-in-out
             -o-transition: left 0.25s ease-in-out
@@ -477,6 +606,14 @@
                         padding: 0 2rem 0 2rem
                         text-align: left
 
+                    .button-row
+                        width: 100%
+                        display: flex
+                        justify-content: space-around
+
+    .portfolio-button
+        margin: 5rem
+
     .mobile-avatar
         display: none
 
@@ -528,6 +665,7 @@
                 .tab-container
                     .card-body
                         padding: 15px 5px 5px 5px
+
                     h2
                         font-size: 1.8rem
 
