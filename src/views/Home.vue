@@ -23,19 +23,19 @@
                     Explore my portfolio
                 </b-button>
                 <div class="contact-icons">
-                    <a target="_blank" rel="noopener" href="https://www.github.com/andrewgorman/">
+                    <a title="Andrew Gorman GitHub profile" target="_blank" rel="noopener" href="https://www.github.com/andrewgorman/">
                         <font-awesome-icon
                             class="contact-icon"
                             :icon="['fab',  'github']"
                         />
                     </a>
-                    <a target="_blank" rel="noopener" href="mailto:andrew@andrewgorman.dev">
+                    <a title="Andrew Gorman Email" target="_blank" rel="noopener" href="mailto:andrew@andrewgorman.dev">
                         <font-awesome-icon
                             class="contact-icon"
                             :icon="['fal',  'envelope']"
                         />
                     </a>
-                    <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/andrew-gorman/">
+                    <a title="Andrew Gorman LinkedIn"  target="_blank" rel="noopener" href="https://www.linkedin.com/in/andrew-gorman/">
                         <font-awesome-icon
                             class="contact-icon"
                             :icon="['fab',  'linkedin-in']"
@@ -287,7 +287,6 @@
 
     export default {
         name: 'Home',
-        components: {},
         computed: {
             portfolioURL() {
                 return process.env.VUE_APP_PORTFOLIO_LINK;

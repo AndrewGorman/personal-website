@@ -41,6 +41,7 @@
             color="#EFEFEF"
             size="m"
             type="emphatic"
+            name="Menu toggle"
             v-on:toggle="onToggle"
         />
     </div>
