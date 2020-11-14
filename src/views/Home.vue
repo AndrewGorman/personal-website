@@ -43,7 +43,7 @@
                     </a>
                 </div>
             </div>
-            <img alt="Andrew Gorman headshot" class="andrew-image" src="@/assets/andrew_bw.png">
+            <img alt="Andrew Gorman headshot" class="andrew-image" src="@/assets/andrew_cutout.png">
             <div
                 id="about"
                 class="dark-content-box"
@@ -304,7 +304,6 @@
                 amountx: 200,
                 amounty: 150,
                 container: null,
-                stats: null,
                 camera: null,
                 scene: null,
                 renderer: null,
@@ -317,7 +316,7 @@
         },
         methods: {
             init() {
-                const container = document.getElementById('home');
+                this.container = document.getElementById('home');
                 this.camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
                 this.camera.position.x = 0;
                 this.camera.position.y = 800;
@@ -335,9 +334,9 @@
 
                 for (let ix = 0; ix < this.amountx; ix++) {
                     for (let iy = 0; iy < this.amounty; iy++) {
-                        positions[i] = ix * this.separation - ((this.amountx * this.separation) / 2); // x
-                        positions[i + 1] = 0; // y
-                        positions[i + 2] = iy * this.separation - ((this.amounty * this.separation) / 2); // z
+                        positions[i] = ix * this.separation - ((this.amountx * this.separation) / 2);
+                        positions[i + 1] = 0;
+                        positions[i + 2] = iy * this.separation - ((this.amounty * this.separation) / 2);
                         scales[j] = 1;
                         i += 3;
                         j++;
@@ -357,13 +356,13 @@
                 this.renderer.setClearColor(0xffffff, 0);
                 this.renderer.setPixelRatio(window.devicePixelRatio);
                 this.renderer.setSize(window.innerWidth, window.innerHeight);
-                container.appendChild(this.renderer.domElement);
+                this.container.appendChild(this.renderer.domElement);
 
                 window.addEventListener('resize', this.onWindowResize, false);
+                console.log(this.particles);
             },
             animate() {
                 requestAnimationFrame(this.animate);
-
                 this.render();
             },
             render() {
@@ -428,7 +427,7 @@
         .andrew-image
             max-width: 350px
             position: absolute
-            top: 175px
+            top: 170px
             left: 55%
             z-index: 1
             -webkit-transition: left 0.25s ease-in-out
