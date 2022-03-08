@@ -283,8 +283,6 @@
 </template>
 
 <script>
-    import * as Three from 'three';
-
     export default {
         name: 'Home',
         computed: {
@@ -300,98 +298,12 @@
         },
         data() {
             return {
-                separation: 100,
-                amountx: 200,
-                amounty: 150,
-                container: null,
-                camera: null,
-                scene: null,
-                renderer: null,
-                particles: null,
-                count: 0,
                 currentAboutTab: 2,
                 hoveringAbout: false,
                 tabTitles: ['Education', 'Work Experience', 'Skills & Proficiencies'],
             };
         },
         methods: {
-            init() {
-                this.container = document.getElementById('home');
-                this.camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-                this.camera.position.x = 0;
-                this.camera.position.y = 800;
-                this.camera.position.z = 1000;
-
-                this.scene = new Three.Scene();
-
-                this.camera.lookAt(this.scene.position);
-
-                const numParticles = this.amountx * this.amounty;
-                const positions = new Float32Array(numParticles * 3);
-                const scales = new Float32Array(numParticles);
-
-                let i = 0, j = 0;
-
-                for (let ix = 0; ix < this.amountx; ix++) {
-                    for (let iy = 0; iy < this.amounty; iy++) {
-                        positions[i] = ix * this.separation - ((this.amountx * this.separation) / 2);
-                        positions[i + 1] = 0;
-                        positions[i + 2] = iy * this.separation - ((this.amounty * this.separation) / 2);
-                        scales[j] = 1;
-                        i += 3;
-                        j++;
-                    }
-                }
-
-                const geometry = new Three.BufferGeometry();
-                geometry.setAttribute('position', new Three.BufferAttribute(positions, 3));
-                geometry.setAttribute('scale', new Three.BufferAttribute(scales, 1));
-
-                const material = new Three.MeshBasicMaterial();
-
-                this.particles = new Three.Points(geometry, material);
-                this.scene.add(this.particles);
-
-                this.renderer = new Three.WebGLRenderer({antialias: true, alpha: true});
-                this.renderer.setClearColor(0xffffff, 0);
-                this.renderer.setPixelRatio(window.devicePixelRatio);
-                this.renderer.setSize(window.innerWidth, window.innerHeight);
-                this.container.appendChild(this.renderer.domElement);
-
-                window.addEventListener('resize', this.onWindowResize, false);
-                console.log(this.particles);
-            },
-            animate() {
-                requestAnimationFrame(this.animate);
-                this.render();
-            },
-            render() {
-                const positions = this.particles.geometry.attributes.position.array;
-                const scales = this.particles.geometry.attributes.scale.array;
-                let i = 0, j = 0;
-                for (let ix = 0; ix < this.amountx; ix++) {
-                    for (let iy = 0; iy < this.amounty; iy++) {
-                        positions[i + 1] = (Math.sin((ix + this.count) * 0.3) * 50) +
-                            (Math.sin((iy + this.count) * 0.5) * 50);
-                        scales[j] = (Math.sin((ix + this.count) * 0.3) + 1) * 20 +
-                            (Math.sin((iy + this.count) * 0.5) + 1) * 20;
-                        i += 3;
-                        j++;
-                    }
-                }
-
-                this.particles.geometry.attributes.position.needsUpdate = true;
-                this.particles.geometry.attributes.scale.needsUpdate = true;
-                this.renderer.render(this.scene, this.camera);
-                this.count += 0.1;
-            },
-            onWindowResize() {
-                this.camera.aspect = window.innerWidth / window.innerHeight;
-                this.camera.updateProjectionMatrix();
-
-                this.renderer.setSize(window.innerWidth, window.innerHeight);
-
-            },
             increaseAboutTab() {
                 if (this.currentAboutTab === 2) {
                     this.currentAboutTab = 0;
